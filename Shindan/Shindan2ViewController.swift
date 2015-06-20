@@ -13,7 +13,6 @@ class Shindan2ViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -34,27 +33,22 @@ class Shindan2ViewController: UIViewController {
     */
     
     //上のボタンを押した時の命令
-    @IBAction func button1(){
+    @IBAction func button1() {
         
         hanteiNum = hanteiNum + 0
-        [self .segue()]
+        self.segue()
     }
     
     //下のボタンを押した時の命令
-    @IBAction func button2(){
+    @IBAction func button2() {
         
         hanteiNum = hanteiNum + 50
-        [self .segue()]
+        self.segue()
     }
     
-    func segue(){
-        // 遷移するViewを定義する.
-        let kekkaViewController: KekkaViewController = self.storyboard?.instantiateViewControllerWithIdentifier("kekka") as! KekkaViewController
-        // Viewの移動する.
-        self.presentViewController(kekkaViewController, animated: true, completion: nil)
+    func segue() {
+        self.performSegueWithIdentifier("toKekka", sender: nil)
         NSLog("%d", hanteiNum)
     }
-
-
 
 }

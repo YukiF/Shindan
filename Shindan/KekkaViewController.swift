@@ -27,13 +27,13 @@ class KekkaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        if hanteiNum == 0{
+        if hanteiNum == 0 {
             kekkaTextView.text = shindanArray[0]
             kekkaImageView.image = kekka1Image
-        }else if hanteiNum == 50{
+        }else if hanteiNum == 50 {
             kekkaTextView.text = shindanArray[1]
             kekkaImageView.image = kekka2Image
-        }else if hanteiNum == 100{
+        }else if hanteiNum == 100 {
             kekkaTextView.text = shindanArray[2]
             kekkaImageView.image = kekka3Image
         }

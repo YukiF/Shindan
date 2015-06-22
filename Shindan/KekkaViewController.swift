@@ -11,28 +11,30 @@ import UIKit
 class KekkaViewController: UIViewController {
     
     //診断結果のテキストを格納する配列
-    var shindanArray:[String]! = ["犬","モルモット","マンボウ"]
-    //診断結果のテキストを表示するTextView
-    @IBOutlet var kekkaView:UITextView!
-    //診断結果の画像を表示するImageView
-    @IBOutlet var kekkaImageView:UIImageView!
+    var shindanArray: [String]! = ["犬","モルモット","マンボウ"]
+    
     //診断結果の画像を格納するUIImage
-    var kekka1Image:UIImage! = UIImage(named: "inu.png")!
-    var kekka2Image:UIImage! = UIImage(named: "morumotto.png")!
-    var kekka3Image:UIImage! = UIImage(named: "manbou.png")!
-
-
+    var kekka1Image: UIImage! = UIImage(named: "inu.png")!
+    var kekka2Image: UIImage! = UIImage(named: "morumotto.png")!
+    var kekka3Image: UIImage! = UIImage(named: "manbou.png")!
+    
+    //診断結果のテキストを表示するTextView
+    @IBOutlet var kekkaTextView: UITextView!
+    //診断結果の画像を表示するImageView
+    @IBOutlet var kekkaImageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        if hanteiNum == 0{
-            kekkaView.text = shindanArray[0]
+        if hanteiNum == 0 {
+            kekkaTextView.text = shindanArray[0]
             kekkaImageView.image = kekka1Image
-        }else if hanteiNum == 50{
-            kekkaView.text = shindanArray[1]
+        }else if hanteiNum == 50 {
+            kekkaTextView.text = shindanArray[1]
             kekkaImageView.image = kekka2Image
-        }else if hanteiNum == 100{
-            kekkaView.text = shindanArray[2]
+        }else if hanteiNum == 100 {
+            kekkaTextView.text = shindanArray[2]
             kekkaImageView.image = kekka3Image
         }
         

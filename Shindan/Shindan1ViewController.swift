@@ -7,9 +7,9 @@
 //
 
 import UIKit
-//最後に判定するための数字
-var hanteiNum:Int!
 
+//最後に判定するための数字
+var hanteiNum: Int!
 
 class Shindan1ViewController: UIViewController {
     
@@ -36,23 +36,20 @@ class Shindan1ViewController: UIViewController {
     */
     
     //上のボタンを押した時の命令
-    @IBAction func button1(){
+    @IBAction func button1() {
         hanteiNum = hanteiNum + 0
-        [self .segue()]
+        self.segue()
     }
     
     //下のボタンを押した時の命令
-    @IBAction func button2(){
+    @IBAction func button2() {
         hanteiNum = hanteiNum + 50
-        [self .segue()]
+        self.segue()
     }
 
-    func segue(){
-        // 遷移するViewを定義する.
-        let shindan2ViewController: Shindan2ViewController = self.storyboard?.instantiateViewControllerWithIdentifier("shindan2") as! Shindan2ViewController
-        // Viewの移動する.
-        self.presentViewController(shindan2ViewController, animated: true, completion: nil)
+    func segue() {
+        performSegueWithIdentifier("toShindan2", sender: nil)
         NSLog("%d", hanteiNum)
     }
-
+    
 }
